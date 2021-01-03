@@ -10,7 +10,7 @@ typedef struct {
 	double x, y;
 } Vec2;
 
-unsigned char palletData[][3] = {
+static unsigned char palletData[][3] = {
 #if 0
 	{   0,   0,   0 },
 	{ 200,   0,   0 },
@@ -27,15 +27,15 @@ unsigned char palletData[][3] = {
 #endif
 };
 
-float aspect = 800 / 600;
-double maxIter  = 255;
-Vec2 center     = { -0.5, 0.0 };
-float  rotation = 0;
-double zoom     = 2.0;
+static float aspect = 800 / 600;
+static double maxIter  = 255;
+static Vec2 center     = { -0.5, 0.0 };
+static float  rotation = 0;
+static double zoom     = 2.0;
 
-Vec2 sCenter     = { -0.5, 0.0 };
-float  sRotation = 0;
-double sZoom     = 3.0;
+static Vec2 sCenter     = { -0.5, 0.0 };
+static float  sRotation = 0;
+static double sZoom     = 3.0;
 
 static void callback_framebuffer_size(GLFWwindow* window, int width, int height);
 static void die(const char *errstr, ...);

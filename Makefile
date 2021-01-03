@@ -1,6 +1,7 @@
+.POSIX:
 
 mandelbrot: main.c
-	$(CC) `pkg-config --libs --cflags glfw3 glew` -lm $< -o $@ -Wall -Wextra -pedantic -O3
+	${CC} main.c -o $@ `pkg-config --libs --cflags glfw3 glew` -lm -Wall -Wextra -pedantic -O3
 
 run: mandelbrot
 	./$<
