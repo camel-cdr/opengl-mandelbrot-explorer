@@ -7,7 +7,7 @@ uniform dvec2 center;
 uniform dvec2 zoom;
 uniform uint maxIter;
 uniform float rotation;
-uniform sampler1D palet;
+uniform sampler1D palette;
 
 dvec2
 rot(dvec2 p, dvec2 pivot, float angle)
@@ -32,7 +32,7 @@ main()
 	}
 
 	if (iter < maxIter) {
-		fragColor = texture(palet, float(iter) / 100.0);
+		fragColor = texture(palette, float(iter) / 100.0);
 	} else {
 		fragColor = vec4(0,0,0,1);
 	}

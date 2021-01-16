@@ -10,7 +10,7 @@ typedef struct {
 	double x, y;
 } Vec2;
 
-static unsigned char palletData[][3] = {
+static unsigned char paletteData[][3] = {
 #if 0
 	{   0,   0,   0 },
 	{ 200,   0,   0 },
@@ -102,9 +102,9 @@ main(void)
 	glUseProgram(shader);
 
 	/* create palette */
-	GLuint pallet;
-	glGenTextures(1, &pallet);
-	glBindTexture(GL_TEXTURE_1D, pallet);
+	GLuint palette;
+	glGenTextures(1, &palette);
+	glBindTexture(GL_TEXTURE_1D, palette);
 
 	glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_WRAP_T, GL_REPEAT);
@@ -112,8 +112,8 @@ main(void)
 	glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 	glTexImage1D(GL_TEXTURE_1D, 0, GL_RGB,
-	             sizeof palletData / sizeof *palletData, 0,
-	             GL_RGB, GL_UNSIGNED_BYTE, palletData);
+	             sizeof paletteData / sizeof *paletteData, 0,
+	             GL_RGB, GL_UNSIGNED_BYTE, paletteData);
 
 	/* uniform locations */
 	GLuint maxIterLoc = glGetUniformLocation(shader, "maxIter");
