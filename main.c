@@ -302,3 +302,4 @@ createShader(char const *vert, char const *frag)
 
 	return program;
 }
+
